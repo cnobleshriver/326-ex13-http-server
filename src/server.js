@@ -11,7 +11,7 @@ function requestHandler(req, res) {
 
     if (pathname === '/inc') {
         count += 1;
-        res.end(`<b>Count: ${count}</b>`);
+        res.end(`<strong>Count: ${count}</strong>`);
     } else {
         res.end("Server is running");
     }
