@@ -2,18 +2,17 @@
 import http from 'http';
 import url from 'url';
 
-let counter = 0;
+let count = 0;
 
 // TASK #3: Write a request handler
 function requestHandler(req, res) {
     const pathname = url.parse(req.url, true).pathname;
+    res.writeHead(200, { 'Content-Type': 'text/html' });
 
     if (pathname === '/inc') {
-        counter += 1;
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(`<b>Count: ${counter}</b>`)
+        count += 1;
+        res.end(`<b>Count: ${count}</b>`);
     } else {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end("Server is running");
     }
 }
